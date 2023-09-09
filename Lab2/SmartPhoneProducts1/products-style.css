@@ -2,12 +2,15 @@
 body {
     width: 800px;
     margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+
   }
   
   /* Typography */
   
   h1, h2 { 
     text-align: center;
+   
   }
   
   /* block styling */
@@ -15,6 +18,7 @@ body {
   body > div {
     border: 5px solid black;
     display: flex;
+
   }
   
   /*  Form styling */
@@ -31,5 +35,4 @@ body {
   .item img {
       width: 200px;
       height: 200px; 
-      
-  }
+     }
