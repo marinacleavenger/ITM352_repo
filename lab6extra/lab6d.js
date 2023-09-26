@@ -31,6 +31,6 @@ let month=monthInput.value.toLowerCase();
     if (num_days === -1){
         result.textContent ='Invalid Month. Please enter a valid month name';
     } else {
-    result.textContent = 'There are ${num_days} in ${month}'; 
+        result.textContent = `There are ${num_days} days in ${month}.`;
     }
     });
