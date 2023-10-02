@@ -14,7 +14,7 @@ document.querySelector('button').addEventListener('click', function () {
         case "may":
         case "july":
         case "august":
-        case "october":
+        case "october":``
         case "december":
             num_days=31;
             break;
