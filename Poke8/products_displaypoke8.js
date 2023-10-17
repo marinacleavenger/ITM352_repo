@@ -1,11 +1,14 @@
-//starting code here
+//define store name and push it to the DOM in the top title
 const first_name = "Marina";
 const last_name = "Cleavenger's";
-const store_name="Marina Cleavenger";
-top_title.innerHTML=(store_name + ("'s Used Smart Phone Store")); 
+const store_name="Marina";
 
-//send store name to footer title
-bottom_title.innerHTML=("Your one stop shop for used phones - "+store_name+"'s");
+// Manipulate the header to display your name with formatting
+const firstNameSpan = document.getElementById('first_name_span');
+const lastNameSpan = document.getElementById('last_name_span');
+firstNameSpan.textContent = first_name;
+lastNameSpan.textContent = last_name;
+top_title.innerHTML=("Used Smart Phone Store");
 
 //initialize hits, spins, over_half and send to the DOM
 let hits= 0;
@@ -14,7 +17,6 @@ let over_half=false;
 hits_span.innerHTML = hits; 
 spins_span.innerHTML = spins;
 
-//this is the code for POKE8. Start by defining the items, prices, images
 let name1 = "HTC";
 let price1 = 40.00;
 let image1 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg";
@@ -35,8 +37,6 @@ let name5 = "Blackberry";
 let price5 = 10.00;
 let image5 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg";
 
-//poke 8
-
 for (let i=1; eval("typeof name"+i) != 'undefined'; i++){
     document.querySelector('.main').innerHTML += `
     <section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this);">
@@ -51,7 +51,7 @@ const currentYear = new Date().getFullYear();
 const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
 
-// footer table with dynamic elements, set item rotate, the 
+/* Footer*/
 const footerTable = `
     <table>
         <tr>
@@ -73,7 +73,7 @@ const footerTable = `
     </table>
 `;
 
-// Set the innerHTML of the bottom_title element to the generated table/ true or false 
+// Set the innerHTML of the bottom_title element to the generated table
 bottom_title.innerHTML = footerTable;
 
 function changeClassName(element) {
