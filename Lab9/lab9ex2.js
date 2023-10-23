@@ -16,6 +16,6 @@ let age = parts[1].slice(1, -1);
 let major = parts[2].slice(1, -1); 
 
 // Print the extracted values
-console.log("Name:", name);
-console.log("Age:", age);
-console.log("Major:", major);
+console.log("Marina:", name);
+console.log("20:", age);
+console.log("MIS:", major);
