@@ -1,4 +1,3 @@
-//order4.js
 
 function formSubmission() {
     // get the value from the form textbox, convert it to a number and assign it to something easy to type
@@ -10,11 +9,11 @@ function formSubmission() {
         document.getElementById("invalidQuantity").innerHTML = validationMessage;
     } else {
         //redirect to the display_purchase.html page
-        //window.location.href = `display_purchase.html?qty_textbox=${quantity}`;
-        let message = `Thank you for ordering ${quantity} things!`;
-        document.body.innerHTML = message;
+        window.location.href = `display_purchase.html?qty_textbox=${quantity}`;
+        //let message = `Thank you for ordering ${quantity} things!`;
+        //document.body.innerHTML = message;
     }
-    return false; //prevents from submission 
+    return false; // prevents form submission
 
 }
 

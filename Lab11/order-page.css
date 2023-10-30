@@ -1,0 +1,22 @@
+/* General */
+body {
+    width: 800px;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+
+  }
+  
+  /* Typography */
+  
+  h1, h2 { 
+    text-align: center;
+   
+  }
+  
+  /* block styling */
+  
+  body {
+    background: rgba(213, 106, 255, 0.829)
+
+  }
+  
