@@ -1,6 +1,6 @@
 
 function formSubmission() {
-    // get the value from the form textbox, convert it to a number and assign it to something easy to type
+    // get the value from the form textbox and convert it to a number 
     let quantity = Number(document.querySelector('input[name="qty_textbox"]').value);
 
     let validationMessage = validateQuantity(quantity);
@@ -10,7 +10,7 @@ function formSubmission() {
     } else {
         //redirect to the display_purchase.html page
         window.location.href = `display_purchase.html?qty_textbox=${quantity}`;
-        //let message = `Thank you for ordering ${quantity} things!`;
+        //in previous order.js is let message = `Thank you for ordering ${quantity} things!`;
         //document.body.innerHTML = message;
     }
     return false; // prevents form submission
