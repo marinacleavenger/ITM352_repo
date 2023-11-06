@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Page</title>
+<!-- //instead of using products.js on client side, I am having problem.js is from the server side so it is kept safe.  -->
+    <script src="./products.js"></script>
+    <script src= "./order.js"></script>
+</head>
+<body>
+    <div id= "productDetails"></div>
+     <form name="qty_form" action="process_form" method="POST">
+        <div id="productList"></div>
+        <label for="qty_textbox">Quantity Desired:</label>
+        <input type="text" name="qty_textbox">
+        <span id="qty_textbox_message">Enter a quantity</span>
+
+        <br><br>
+        <input type="submit" value="Purchase">
+    </form>    
+</body>
+</html>
+
+<!-- <script> document.write(`<h3>${products[0]["brand"]} at \$${products[0]["price"]}</h3>`);
+</script> -->
