@@ -1,0 +1,32 @@
+[
+	{
+		"model": "Jack-O-Lantern",
+		"price": 12.55,
+		"image": "",
+		"qty_available": 5
+	},
+	{
+		"model": "Spooky Skeleton",
+		"price": 29.99,
+		"image": "",
+		"qty_available": 3
+	},
+    {
+		"model": "Black Cat Cafe Latte",
+		"price": 15.33,
+		"image": "",
+		"qty_available": 3
+	},
+    {
+		"model": "Screamin Marshmallows",
+		"price": 6.66,
+		"image": "",
+		"qty_available": 3
+	},
+    {
+		"model": "Horror Movie Collection",
+		"price": 130.33,
+		"image": "",
+		"qty_available": 3
+	}
+]
