@@ -2,7 +2,7 @@
 	{
 		"model": "Jack-O-Lantern",
 		"price": 12.55,
-		"image": "",
+		"image": "./images/jacklantern.jpg",
 		"qty_available": 5
 	},
 	{
