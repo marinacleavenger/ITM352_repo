@@ -3,13 +3,13 @@
 body {
     width: 800px;
     margin: 0 auto;
-    background: url("images/halloween_spider.jpg");
+    background: url("images/background_grey.jpg");
 } 
 
 /* Typography */
 h1, h2 {
     text-align: center;
-    color: #0a0808;
+    color: #df0000;
 }
 
 /* Block Styling */
@@ -18,7 +18,7 @@ h1, h2 {
     flex-flow: row wrap;
     justify-content: space-around;
     /* background: purple; */
-    color: black;
+    color: rgb(255, 90, 14);
 }
 
 /* Styling the products display */
@@ -40,7 +40,7 @@ h1, h2 {
 
 /* Div children of body */
 body > div {
-    border: 10px solid black;
+    border: 10px solid rgb(198, 0, 248);
     display: flex;
 }
 
