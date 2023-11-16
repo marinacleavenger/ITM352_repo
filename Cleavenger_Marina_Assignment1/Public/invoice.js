@@ -56,7 +56,6 @@ for (let i = 0; i < itemData.length; i++) {
     }
 }
 
-
 //initialize variables for subtotal, tax, shipping charge, and total
 let subtotal=0;
 let taxRate = 0.0575; // 5.75%
