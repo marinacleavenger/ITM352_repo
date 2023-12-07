@@ -6,9 +6,9 @@ app.use(express.urlencoded({extended : true}));
 let cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-// let session = require('express-session');
+let session = require('express-session');
 
-// app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
+app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
 
 app.get('/set_cookie', (req, res) => {
 res.cookie('username', 'Marina', {maxAge: 10000});
@@ -20,10 +20,10 @@ let username = reqest.cookies.username;
 res.send(`Welcome to the Use Cookie page, ${username}`)
 });
 
-// app.get('/use_session', (req, res) => {
-// res.send(`Welcome your session ID is ${req.session.id}`);
-// })
-
+app.get('/use_session', (req, res) => {
+res.send(`Welcome your session ID is ${req.session.id}`);
+// req.session.destroy();
+});
 
 
 const fs = require('fs');
@@ -72,22 +72,37 @@ fs.writeFileSync(filename, JSON.stringify(user_reg_data), 'utf-8');
 app.get("/login", function (request, response) {
     // let username = request.cookies.username || '';
     // if (!username.length!=0){
-
-
     // Give a simple login form
-    str = `
+    //below function is called when the cookie is calling the username, if it exists 
+    const login_form = `
         <script>
+        function getCookieValue(cookieName){
+            let cookies = document.cookie.split(';');
+            for (let i=0; i <cookies.length; i++){
+                let cookiePair=cookies[i].trim().split('=');
+                if(cookiePair[0]===cookieName){
+                    return cookiePair[1];
+                }
+            }
+            return null;
+        }
             let params = (new URL(document.location)).searchParams;
             window.onload = function() {
                 if (params.has('error')) {
                     login_form['username'].value = params.get('username');
                     document.getElementById("errMsg").innerHTML = params.get("error");
                 }
+                let cookie_username=gotCookieValue ('username');
+                if (cookie_username){
+                    document.getElementById ("welcomeUser").innerHTML = 'Welcome back'+cookie_username+'!';
+                }
+
             }
         </script>
 
         <body>
         <div id="errMsg"></div>
+        <div id = "welcomeUser"></div>
         <p id = "Welcome"></p>
         <form action="" method="POST" name="login_form">
         <input type="text" name="username" size="40" placeholder="enter username" ><br />
@@ -100,7 +115,7 @@ app.get("/login", function (request, response) {
     if (!username.length!=0){
         document.getElementById("Welcome")= `Welcome ${username}`;
     }
-    response.send(str);
+    response.send(login_form);
 });
 
 app.post("/login", function (request, response) {
@@ -118,10 +133,11 @@ app.post("/login", function (request, response) {
     if (typeof user_reg_data[username_entered] != 'undefined') {
         // Check if the password matches with the username
         if (password_entered == user_reg_data[username_entered].password) {
-            // response_msg = `${username_entered} is logged in.`;
-            respond.cookie('username', `${username_entered}`);
-            const userSession= request.session;
 
+            // response_msg = `${username_entered} is logged in.`;
+            response.cookie('username', `${username_entered}`);
+
+            const userSession= request.session;
             if (!userSession.lastLogin){
                 userSession.lastLogin = "First visit!"
             } else {
